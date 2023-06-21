@@ -37,7 +37,7 @@ m1 = hurdle(active ~ EE+SD*week | EE+SD*week, data = dat, dist = "negbin", zero.
 
 rootogram(m1, max = max(dat$active),main = "All active behaviours") # model fit
 
-p1 = emmip(m1,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0.5,
+p1 = emmip(m1,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -49,7 +49,7 @@ p1 = emmip(m1,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0
   guides(color=guide_legend(nrow=2,byrow=TRUE)) +
   scale_y_continuous(breaks = seq(0, 8,by = 2), labels = c("0", "2", "4", "6", "8"), limits = c(0,8))
 
-p10 = emmip(m1,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5, level = 0.5,
+p10 = emmip(m1,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -72,7 +72,7 @@ comps = pwpm(x)
 
 m2 = hurdle(preening ~ EE*week+SD | EE*week+SD, data = dat, dist = "negbin", zero.dist = "binomial")
 
-p2 = emmip(m2,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0.75,
+p2 = emmip(m2,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -85,7 +85,7 @@ p2 = emmip(m2,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0
   scale_y_continuous(breaks = seq(0, 6, by = 2), labels = c("0", "2", "4", "6"), limits = c(0,6.5))
 
 
-p20 = emmip(m2,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5, level = 0.75,
+p20 = emmip(m2,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -130,7 +130,7 @@ m5 = hurdle(foraging ~ EE+week+SD|EE*week+SD*week, data = dat, dist = "negbin", 
 
 rootogram(m5, max = max(dat$foraging), main = "foraging") # model fit
 
-p3 = emmip(m5,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0.75,
+p3 = emmip(m5,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -142,7 +142,7 @@ p3 = emmip(m5,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0
   guides(color=guide_legend(nrow=2,byrow=TRUE))+
   scale_y_continuous(breaks = seq(0, 6, by = 2), labels = c("0", "2", "4", "6"), limits = c(0,6.5))
 
-p30 = emmip(m5,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5, level = 0.75,
+p30 = emmip(m5,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -166,7 +166,7 @@ m6 = hurdle(eating ~ week + EE+SD |week + EE*SD, data = dat, dist = "negbin", ze
 
 rootogram(m6, max = max(dat$eating), main = "eating") # model fit
 
-p4 = emmip(m6,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0.75,
+p4 = emmip(m6,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -178,7 +178,7 @@ p4 = emmip(m6,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0
   guides(color=guide_legend(nrow=2,byrow=TRUE))+
   scale_y_continuous(breaks = seq(0, 4, by = 2), labels = c("0", "2", "4"), limits = c(0,4.5))
 
-p40 = emmip(m6,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5, level = 0.75,
+p40 = emmip(m6,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -204,7 +204,7 @@ m7 = hurdle(drinking ~ week+SD+EE|week+SD+EE, data = dat, dist = "negbin", zero.
 
 rootogram(m7, max = max(dat$drinking), main = "drinking") # model fit
 
-p5 = emmip(m7,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0.75,
+p5 = emmip(m7,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -216,7 +216,7 @@ p5 = emmip(m7,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0
   guides(color=guide_legend(nrow=2,byrow=TRUE))+
   scale_y_continuous(breaks = seq(0, 4, by = 2), labels = c("0", "2", "4"), limits = c(0,4.5))
 
-p50 = emmip(m7,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5, level = 0.75,
+p50 = emmip(m7,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -243,7 +243,7 @@ m8 = hurdle(locomotion ~ week * SD * EE | week*SD*EE, data = dat, dist = "negbin
 rootogram(m8, max = max(dat$locomotion),main = "Locomotion") # model fit
 
 
-p7 = emmip(m8,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0.75,
+p7 = emmip(m8,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
@@ -256,7 +256,7 @@ p7 = emmip(m8,  SD+EE ~ week, CIs = TRUE, mode = "count", dodge = 0.5, level = 0
   scale_y_continuous(breaks = seq(0, 6, by = 2), labels = c("0", "2", "4", "6"), limits = c(0,6.5))
 
 
-p70 = emmip(m8,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5, level = 0.75,
+p70 = emmip(m8,  SD+EE ~ week, CIs = TRUE, mode = "prob0", dodge = 0.5,
            linearg = list(linetype = "blank"),
            dotarg = list(size = 2, alpha = 1),
            CIarg = list(lwd = 1.5, alpha = 0.8)) %>%
